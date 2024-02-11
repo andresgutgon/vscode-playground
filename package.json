@@ -18,7 +18,9 @@
     "ui",
     "workspace"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onWebviewPanel:catCoding"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "views": {
@@ -26,7 +28,7 @@
         {
           "type": "webview",
           "id": "latitude-vscode.colorsView",
-          "name": "Colors Webview"
+          "name": "COLORINES"
         }
       ]
     },
@@ -45,6 +47,16 @@
         "category": "Colorines",
         "title": "Clear Colors",
         "icon": "$(clear-all)"
+      },
+      {
+        "command": "latitude-vscode.startCatCodingSession",
+        "title": "Start cat coding session",
+        "category": "Cat Coding"
+      },
+      {
+        "command": "latitude-vscode.doRefactor",
+        "title": "Do some refactoring",
+        "category": "Cat Coding"
       }
     ],
     "menus": {
