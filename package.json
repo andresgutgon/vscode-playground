@@ -3,21 +3,59 @@
   "displayName": "latitude-vscode",
   "description": "The official VSCode extension for Latitude data projects",
   "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.86.0"
-  },
   "categories": [
-    "Other"
+    "Data Science",
+    "Productivity",
+    "Data Engineering",
+    "Data Analysis",
+    "Data Visualization",
+    "Data as code"
+  ],
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "latitude-vscode.colorsView",
+          "name": "Colors Webview"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "latitude-vscode.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "latitude-vscode.addColor",
+        "category": "Colorines",
+        "title": "Add Color"
+      },
+      {
+        "command": "latitude-vscode.clearColors",
+        "category": "Colorines",
+        "title": "Clear Colors",
+        "icon": "$(clear-all)"
       }
-    ]
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "latitude-vscode.clearColors",
+          "group": "navigation",
+          "when": "view == latitude-vscode.colorsView"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
