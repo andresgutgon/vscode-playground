@@ -1,3 +1,7 @@
+## TODO
+
+- [ ] Look into [Notebook Controller](https://code.visualstudio.com/api/extension-guides/notebook#controller) to see how a cell can be run.
+
 # VSCode extension playground
 
 Play with the APIs for developing a VSCode extension
