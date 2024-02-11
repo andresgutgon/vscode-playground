@@ -2,6 +2,8 @@ import * as vscode from "vscode";
 import ColorsViewProvider from "./ColorsProvider";
 import { buildCommandId } from "./constants";
 import { CatCodingPanel, getWebviewOptions } from "./CatCodingPanel";
+import SqlProvider, { SQL_PROVIDER_OPTIONS } from "./sqlProvider/provider";
+import isLatitudeProject from "./lib/isLatitudeProject";
 
 function registerCatCodingPanel(context: vscode.ExtensionContext) {
   if (!vscode.window.registerWebviewPanelSerializer) {
@@ -65,6 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
       },
     ),
   );
+
   context.subscriptions.push(
     vscode.commands.registerCommand(
       buildCommandId({ key: "doRefactor" }),
@@ -77,8 +80,16 @@ export function activate(context: vscode.ExtensionContext) {
       },
     ),
   );
+
+  context.subscriptions.push(
+    vscode.workspace.registerNotebookSerializer(
+      "latitude-sql-queries",
+      new SqlProvider(),
+      SQL_PROVIDER_OPTIONS,
+    ),
+  );
 }
 
 // You can unload things when the extension is
 // desactivated with this function
-export function deactivate() {}
+export function deactivate() { }

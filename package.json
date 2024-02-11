@@ -19,9 +19,17 @@
     "workspace"
   ],
   "activationEvents": [
-    "onWebviewPanel:catCoding"
+    "onWebviewPanel:catCoding",
+    "onLanguage:sql",
+    "workspaceContains:**/latitude.json"
   ],
   "main": "./out/extension.js",
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "contributes": {
     "views": {
       "explorer": [
@@ -67,7 +75,18 @@
           "when": "view == latitude-vscode.colorsView"
         }
       ]
-    }
+    },
+    "notebooks": [
+      {
+        "type": "latitude-sql-queries",
+        "displayName": "Latitude SQL Query",
+        "selector": [
+          {
+            "filenamePattern": "*.{slq.md}"
+          }
+        ]
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
