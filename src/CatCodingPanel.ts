@@ -74,7 +74,7 @@ export class CatCodingPanel {
 
     // Update the content based on view changes
     this._panel.onDidChangeViewState(
-      (e) => {
+      (_e) => {
         if (this._panel.visible) {
           this._update();
         }
