@@ -1,71 +1,43 @@
-# latitude-vscode README
+# VSCode extension playground
 
-This is the README for your extension "latitude-vscode". After writing up a brief description, we recommend including the following sections.
+Play with the APIs for developing a VSCode extension
 
-## Features
+## Development
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension is done with Typescript. For compiling and running it inside
+VSCode do:
 
-For example if there is an image subfolder under your extension project workspace:
+1. Go to VSCode (If you are a real dev and use Vim)
+2. Open `src/extension.ts`
+3. Press `F5`.
 
-\!\[feature X\]\(images/feature-x.png\)
+# Refresh Extension Host
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+When developing a VSCode extension you do in a safe environment that is a VSCode
+but sandboxed. It's called [VSCode Development Host](https://code.visualstudio.com/api/advanced-topics/extension-host). Just do
 
-## Requirements
+Do `⌘r` when you modify some files to compile the code. This will refreh the
+vscode dev environment and compile the Typescript code.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Examples
 
-## Extension Settings
+This repo is a collection of examples that are available in VSCode documentation
+and GitHub repo but run by me. You know? Learn by example.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### 1. Hello world
 
-For example:
+Press `⇧⌘P` to run the **Hello word** command. Is a simple message that will
+appear in the right bottom corner of your VSCode editor
 
-This extension contributes the following settings:
+### 2. Colors example
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Press `⇧⌘P` and look for **addColor** command. This will open a view in the
+sidebar where you can add some colors. Then open for example a markdow file and
+click on one of the colors in the sidebar called `COLORINES`.
 
-## Known Issues
+### 3. Cat Coding
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Press `⇧⌘P` and look for **startCatCodingSession** this will show a webview with
+`*.gif` of a cat on keyboard. Aditionally you can press `⇧⌘P` and look for
+**doRefactor** and that will change the number of lines done by the cat. The
+number of lines is the number that appears under the gif.
